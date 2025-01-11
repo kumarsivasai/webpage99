@@ -1,0 +1,131 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Volleyball Selection Form</title>
+    <link rel="icon" type="image/x-icon" href="vollyball.jpg">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background-image: url("R.jpg");
+            background-repeat: no-repeat;
+            background-size: cover;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 200vh;
+            font-family: Arial, sans-serif;
+        }
+        .wrapper {
+            width: 600px;
+            height: 300;
+            padding: 20px;
+            background-color:transparent;
+            border: 2px solid rgb(225, 225, 225, .2);
+            backdrop-filter: blur(20px);
+            box-shadow:  0 0 10px rgb(0, 0, 0,.2);
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(121, 183, 212, 0.2);
+            color: #040404;
+        }
+        h2, h5 {
+            text-align: 0;
+        }
+        h2 {
+            margin-bottom: 20px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .gender-group, .language-group {
+            display: flex;
+            gap: 10px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="volleyballForm" action="login.php" method="POST">
+            <h2 style="text-align: center;">Register Form for Volleyball tournament</h2>
+            <hr>
+            
+            <h5>Participant Name</h5>
+            <input type="text" name="firstname" placeholder="First Name" required>
+            <input type="text" name="lastname" placeholder="Last Name" required>
+
+            <h5>Roll Number</h5>
+            <input type="text" name="rollnumber" required>
+
+            <h5>Father's Name</h5>
+            <input type="text" name="fathername" required>
+
+            <h5>Age</h5>
+            <input type="number" name="age" required>
+
+            <h5>Date of Birth</h5>
+            <input type="date" name="dob" required>
+
+            <h5>Jersey Number</h5>
+            <input type="number" name="jerseynumber" required>
+
+            <h5>Gender</h5>
+            <div class="gender-group">
+                <label><input type="radio" name="gender" value="female" required> Female</label>
+                <label><input type="radio" name="gender" value="male" required> Male</label>
+            </div>
+
+            <h5>Languages Known</h5>
+            <div class="language-group">
+                <label><input type="checkbox" name="language[]" value="english"> English</label>
+                <label><input type="checkbox" name="language[]" value="telugu"> Telugu</label>
+                <label><input type="checkbox" name="language[]" value="hindi"> Hindi</label>
+            </div>
+
+            <h5>School Name</h5>
+            <input type="text" name="schoolname" required>
+
+            <h5>Address</h5>
+            <input type="text" name="address" required>
+
+            <h5>Pincode</h5>
+            <input type="number" name="pincode" required>
+
+            <h5>Email ID</h5>
+            <input type="email" name="email" required>
+
+            <h5>Mobile Number</h5>
+            <input type="tel" name="mobile" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+    <script>
+        document.getElementById('volleyballForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevents actual form submission
+            alert('Registered successfully');
+            this.submit(); // Optional: Submit form if backend handling is required
+        });
+    </script>
+</body>
+</html>
